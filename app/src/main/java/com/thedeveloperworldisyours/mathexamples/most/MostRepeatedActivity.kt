@@ -1,56 +1,55 @@
-package com.thedeveloperworldisyours.mathexamples
+package com.thedeveloperworldisyours.mathexamples.most
 
+import android.content.Intent
+import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
+import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import android.content.Intent
+import com.thedeveloperworldisyours.mathexamples.ActivityUtils
+import com.thedeveloperworldisyours.mathexamples.R
+import com.thedeveloperworldisyours.mathexamples.fibonacci.FibonacciActivity
 
-
-
-class FibonacciActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MostRepeatedActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fibonacci_activity)
-        val toolbar = findViewById(R.id.fibonacci_toolbar) as Toolbar
+        setContentView(R.layout.most_repeated_activity)
+
+        val toolbar = findViewById(R.id.most_app_bar_toolbar) as Toolbar
         setSupportActionBar(toolbar)
 
-        val fab = findViewById(R.id.fibonacci_fab) as FloatingActionButton
+        val fab = findViewById(R.id.most_app_bar_fab) as FloatingActionButton
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
 
-        val drawer = findViewById(R.id.fibonacci_drawer_layout) as DrawerLayout
-        val toggle = ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        val drawer = findViewById(R.id.most_drawer_layout) as DrawerLayout
+        val toggle = ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+
         drawer.addDrawerListener(toggle)
         toggle.syncState()
 
-        val navigationView = findViewById(R.id.fibonacci_nav_view) as NavigationView
+        val navigationView = findViewById(R.id.most_nav_view) as NavigationView
         navigationView.setNavigationItemSelectedListener(this)
 
-
-        var fibonacciFragment: FibonacciFragment? = supportFragmentManager.findFragmentById(R.id.fibonacci_content) as? FibonacciFragment
-        if (fibonacciFragment == null) {
-            // Create the fragment
-            fibonacciFragment = FibonacciFragment.newInstance()
-            ActivityUtils.addFragmentToActivity(
-                    supportFragmentManager, fibonacciFragment, R.id.fibonacci_content)
+        var mostFragment: MostFragment? = supportFragmentManager.findFragmentById(R.id.most_content) as? MostFragment
+        if (mostFragment == null) {
+            mostFragment = MostFragment.Companion.newInstance()
+            ActivityUtils.addFragmentToActivity(supportFragmentManager, mostFragment, R.id.most_content)
         }
 
     }
 
     override fun onBackPressed() {
-        val drawer = findViewById(R.id.fibonacci_drawer_layout) as DrawerLayout
+        val drawer = findViewById(R.id.most_drawer_layout) as DrawerLayout
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START)
         } else {
@@ -78,11 +77,11 @@ class FibonacciActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_fibonacci -> {
-                // Handle the camera action
+                val intent = Intent(this@MostRepeatedActivity, FibonacciActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_most_repeated -> {
-                val intent = Intent(this@FibonacciActivity, MostRepeatedActivity::class.java)
-                startActivity(intent)
+
             }
             R.id.nav_slideshow -> {
 
@@ -98,7 +97,7 @@ class FibonacciActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             }
         }
 
-        val drawer = findViewById(R.id.fibonacci_drawer_layout) as DrawerLayout
+        val drawer = findViewById(R.id.most_drawer_layout) as DrawerLayout
         drawer.closeDrawer(GravityCompat.START)
         return true
     }
