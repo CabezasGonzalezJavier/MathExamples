@@ -19,9 +19,8 @@ import com.thedeveloperworldisyours.mathexamples.R
  * Use the [FibonacciFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FibonacciFragment : Fragment(), FibonacciContract.View {
+class FibonacciFragment(protected lateinit var presenter: FibonacciContract.Presenter) : Fragment(), FibonacciContract.View {
 
-    var presenter: FibonacciContract.Presenter
     var editText : EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +39,8 @@ class FibonacciFragment : Fragment(), FibonacciContract.View {
     override fun showList(finalResult: String) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-    override fun setPresenter(presenter: FibonacciContract.Presenter?) {
+
+    override fun setPresenter(presenter: FibonacciContract.Presenter) {
     }
 
 
@@ -51,7 +51,7 @@ class FibonacciFragment : Fragment(), FibonacciContract.View {
     companion object {
 
         fun newInstance(): FibonacciFragment {
-            return FibonacciFragment()
+            return FibonacciFragment(null)
         }
 
     }
