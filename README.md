@@ -10,8 +10,11 @@ Also visit my blog: **[The developer world is yours](http://thedeveloperworldisy
 
 # Further reading
 
-  As the above only gives a rough overview of rxjava example I'd strongly recommend checking out the following:
+  As the above only gives a rough overview of Kotlin example I'd strongly recommend checking out the following:
+  
+  * **[Kotlin Documantation](https://kotlinlang.org/docs/reference/)**
   * **[Keddit](https://android.jlelse.eu/learn-kotlin-while-developing-an-android-app-part-1-e0f51fc1a8b3)**
+  
 
 
 # Requirements
