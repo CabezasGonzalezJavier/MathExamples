@@ -1,13 +1,13 @@
 # MathExamples
 Math Examples in Kotlin
 
-I'm start to learn Kotlin
-
 Also visit my blog: **[The developer world is yours](http://thedeveloperworldisyours.com/)**
 
 <a href="http://thedeveloperworldisyours.com/">
   <img alt="The developer world is yours" src="https://github.com/CabezasGonzalezJavier/AddTextViewButton/blob/master/TheDeveloperWordIsYours.png" />
 </a>
+
+
 # Further reading
 
   As the above only gives a rough overview of rxjava example I'd strongly recommend checking out the following:
