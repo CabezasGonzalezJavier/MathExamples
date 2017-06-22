@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import com.thedeveloperworldisyours.mathexamples.R
+import com.thedeveloperworldisyours.mathexamples.R.id.most_fragment_edit_text
 
-
+import kotlinx.android.synthetic.main.fibonacci_app_bar.*
 
 
 /**
@@ -19,9 +20,8 @@ import com.thedeveloperworldisyours.mathexamples.R
  * Use the [FibonacciFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FibonacciFragment(protected lateinit var presenter: FibonacciContract.Presenter) : Fragment(), FibonacciContract.View {
+class FibonacciFragment(protected var presenter: FibonacciContract.Presenter) : Fragment(), FibonacciContract.View {
 
-    var editText : EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,6 @@ class FibonacciFragment(protected lateinit var presenter: FibonacciContract.Pres
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater!!.inflate(R.layout.fibonacci_fragment, container, false)
-        editText = view.findViewById(R.id.most_fragment_edit_text) as EditText
 
         return view
     }
@@ -45,13 +44,13 @@ class FibonacciFragment(protected lateinit var presenter: FibonacciContract.Pres
 
 
     fun onClickButton(view : View) {
-        presenter.getData(editText.toString())
+        presenter.getData(most_fragment_edit_text.toString())
     }
 
     companion object {
 
         fun newInstance(): FibonacciFragment {
-            return FibonacciFragment(null)
+            return FibonacciFragment()
         }
 
     }

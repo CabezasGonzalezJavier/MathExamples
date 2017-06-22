@@ -3,24 +3,22 @@ package com.thedeveloperworldisyours.mathexamples.fibonacci
 import com.thedeveloperworldisyours.mathexamples.most.MostRepeatedActivity
 import com.thedeveloperworldisyours.mathexamples.R
 
+import kotlinx.android.synthetic.main.fibonacci_app_bar.*
 
 class FibonacciActivity : android.support.v7.app.AppCompatActivity(), android.support.design.widget.NavigationView.OnNavigationItemSelectedListener {
-
     override fun onCreate(savedInstanceState: android.os.Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.thedeveloperworldisyours.mathexamples.R.layout.fibonacci_activity)
-        val toolbar = findViewById(com.thedeveloperworldisyours.mathexamples.R.id.fibonacci_toolbar) as android.support.v7.widget.Toolbar
-        setSupportActionBar(toolbar)
+        setSupportActionBar(fibonacci_toolbar)
 
-        val fab = findViewById(com.thedeveloperworldisyours.mathexamples.R.id.fibonacci_fab) as android.support.design.widget.FloatingActionButton
-        fab.setOnClickListener { view ->
+        fibonacci_fab.setOnClickListener { view ->
             android.support.design.widget.Snackbar.make(view, "Replace with your own action", android.support.design.widget.Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
 
         val drawer = findViewById(com.thedeveloperworldisyours.mathexamples.R.id.fibonacci_drawer_layout) as android.support.v4.widget.DrawerLayout
         val toggle = android.support.v7.app.ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+                this, drawer, fibonacci_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer.addDrawerListener(toggle)
         toggle.syncState()
 
