@@ -1,6 +1,10 @@
 package com.thedeveloperworldisyours.mathexamples.most
 
 import android.support.v4.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.thedeveloperworldisyours.mathexamples.R
 
 
 /**
@@ -20,7 +24,11 @@ class MostFragment : android.support.v4.app.Fragment() {
     override fun onCreateView(inflater: android.view.LayoutInflater?, container: android.view.ViewGroup?,
                               savedInstanceState: android.os.Bundle?): android.view.View? {
         // Inflate the layout for this fragment
-        return inflater!!.inflate(com.thedeveloperworldisyours.mathexamples.R.layout.fragment_most, container, false)
+        return container?.inflate(R.layout.fragment_most)
+    }
+
+    fun ViewGroup.inflate(layoutId: Int): View {
+        return LayoutInflater.from(context).inflate(layoutId, this, false)
     }
 
     companion object {
