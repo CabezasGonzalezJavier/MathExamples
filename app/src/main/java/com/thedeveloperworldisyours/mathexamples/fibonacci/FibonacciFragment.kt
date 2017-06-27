@@ -5,14 +5,9 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import com.thedeveloperworldisyours.mathexamples.R
-import com.thedeveloperworldisyours.mathexamples.R.*
 import com.thedeveloperworldisyours.mathexamples.R.id.most_fragment_edit_text
 import com.thedeveloperworldisyours.mathexamples.R.layout.fibonacci_fragment
-
-import kotlinx.android.synthetic.main.fibonacci_app_bar.*
-
+import com.thedeveloperworldisyours.mathexamples.commons.inflate
 
 /**
  * A simple [Fragment] subclass.
@@ -34,10 +29,6 @@ class FibonacciFragment(protected var presenter: FibonacciContract.Presenter) : 
         // Inflate the layout for this fragment
 
         return container?.inflate(fibonacci_fragment)
-    }
-
-    fun ViewGroup.inflate(layoutId: Int): View {
-        return LayoutInflater.from(context).inflate(layoutId, this, false)
     }
 
     override fun showList(finalResult: String) {

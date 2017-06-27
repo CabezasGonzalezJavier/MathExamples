@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.thedeveloperworldisyours.mathexamples.R
+import com.thedeveloperworldisyours.mathexamples.commons.inflate
 
 
 /**
@@ -25,10 +26,6 @@ class MostFragment : android.support.v4.app.Fragment() {
                               savedInstanceState: android.os.Bundle?): android.view.View? {
         // Inflate the layout for this fragment
         return container?.inflate(R.layout.fragment_most)
-    }
-
-    fun ViewGroup.inflate(layoutId: Int): View {
-        return LayoutInflater.from(context).inflate(layoutId, this, false)
     }
 
     companion object {
