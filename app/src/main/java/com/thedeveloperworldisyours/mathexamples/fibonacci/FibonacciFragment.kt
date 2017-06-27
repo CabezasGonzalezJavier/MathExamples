@@ -17,7 +17,11 @@ import com.thedeveloperworldisyours.mathexamples.commons.inflate
  * Use the [FibonacciFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FibonacciFragment(protected var presenter: FibonacciContract.Presenter) : Fragment(), FibonacciContract.View {
+class FibonacciFragment(var presenter: Any) : Fragment(), FibonacciContract.View {
+
+    override fun setPresenter(presenter: FibonacciContract.Presenter) {
+        this.presenter = presenter
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,12 +39,11 @@ class FibonacciFragment(protected var presenter: FibonacciContract.Presenter) : 
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun setPresenter(presenter: FibonacciContract.Presenter) {
-    }
+
 
 
     fun onClickButton(view : View) {
-        presenter.getData(most_fragment_edit_text.toString())
+//        presenter.getDataFromPresenter(most_fragment_edit_text.toString())
     }
 
     companion object {

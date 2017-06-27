@@ -5,8 +5,7 @@ import android.content.Context
 /**
  * Created by javierg on 15/06/2017.
  */
-class FibonacciPresenter private constructor(view: FibonacciContract.View) : FibonacciContract.Presenter {
-    abstract var view
+class FibonacciPresenter private constructor(var view: FibonacciContract.View) : FibonacciContract.Presenter {
 
     internal constructor(view: FibonacciContract.View, context: Context) : this(view) {
         this.view = view
