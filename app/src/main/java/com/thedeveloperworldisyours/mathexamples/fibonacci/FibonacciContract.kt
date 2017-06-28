@@ -14,7 +14,7 @@ class FibonacciContract {
     }
 
     interface Presenter {
-        fun getData(number : String)
+        fun calculate(number : String)
 //        fun convertDate(listDate: List<String>): List<String>
 
     }
