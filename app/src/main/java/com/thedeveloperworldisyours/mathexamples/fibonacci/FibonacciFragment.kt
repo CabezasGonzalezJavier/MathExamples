@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.thedeveloperworldisyours.mathexamples.R.id.most_fragment_edit_text
 import com.thedeveloperworldisyours.mathexamples.R.layout.fibonacci_fragment
 import com.thedeveloperworldisyours.mathexamples.commons.inflate
 
@@ -17,7 +16,9 @@ import com.thedeveloperworldisyours.mathexamples.commons.inflate
  * Use the [FibonacciFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FibonacciFragment(var presenter: Any) : Fragment(), FibonacciContract.View {
+class FibonacciFragment() : Fragment(), FibonacciContract.View {
+
+    private var presenter: FibonacciContract.Presenter? =null
 
     override fun setPresenter(presenter: FibonacciContract.Presenter) {
         this.presenter = presenter
