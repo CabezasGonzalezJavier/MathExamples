@@ -2,6 +2,7 @@ package com.thedeveloperworldisyours.mathexamples.fibonacci
 
 import com.thedeveloperworldisyours.mathexamples.most.MostRepeatedActivity
 import com.thedeveloperworldisyours.mathexamples.R
+import kotlinx.android.synthetic.main.fibonacci_activity.*
 
 import kotlinx.android.synthetic.main.fibonacci_app_bar.*
 
@@ -16,10 +17,9 @@ class FibonacciActivity : android.support.v7.app.AppCompatActivity(), android.su
                     .setAction("Action", null).show()
         }
 
-        val drawer = findViewById(com.thedeveloperworldisyours.mathexamples.R.id.fibonacci_drawer_layout) as android.support.v4.widget.DrawerLayout
         val toggle = android.support.v7.app.ActionBarDrawerToggle(
-                this, drawer, fibonacci_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        drawer.addDrawerListener(toggle)
+                this, fibonacci_drawer_layout, fibonacci_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        fibonacci_drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
         val navigationView = findViewById(com.thedeveloperworldisyours.mathexamples.R.id.fibonacci_nav_view) as android.support.design.widget.NavigationView

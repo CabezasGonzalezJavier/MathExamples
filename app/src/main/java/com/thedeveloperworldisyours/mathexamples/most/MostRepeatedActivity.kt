@@ -14,6 +14,7 @@ import com.thedeveloperworldisyours.mathexamples.ActivityUtils
 import com.thedeveloperworldisyours.mathexamples.R
 import com.thedeveloperworldisyours.mathexamples.fibonacci.FibonacciActivity
 import kotlinx.android.synthetic.main.most_app_bar.*
+import kotlinx.android.synthetic.main.most_repeated_activity.*
 
 
 class MostRepeatedActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
@@ -29,10 +30,9 @@ class MostRepeatedActivity : AppCompatActivity() , NavigationView.OnNavigationIt
                     .setAction("Action", null).show()
         }
 
-        val drawer = findViewById(R.id.most_drawer_layout) as DrawerLayout
-        val toggle = ActionBarDrawerToggle(this, drawer, most_app_bar_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        val toggle = ActionBarDrawerToggle(this, most_drawer_layout, most_app_bar_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
 
-        drawer.addDrawerListener(toggle)
+        most_drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
         val navigationView = findViewById(R.id.most_nav_view) as NavigationView

@@ -7,32 +7,24 @@ import android.content.Context
  */
 class FibonacciPresenter private constructor(var view: FibonacciContract.View) : FibonacciContract.Presenter {
 
-    var n1 = 0
-    var n2 = 1
-    var n3 = 0
-
     internal constructor(view: FibonacciContract.View, context: Context) : this(view) {
         this.view = view
         view.setPresenter(this)
     }
 
-    override fun calculate(number : String) {
+    override fun calculate(countString: String) {
+        val count = countString.toInt()
+        val fibonacciArray = IntArray(count)
+        fibonacciArray[0] = 0
+        fibonacciArray[1] = 1
 
-        val count = 10
-        this.view.showList(n1.toString() + " " + n2)//printing 0 and 1
-        printFibonacci(count - 2)//n-2 because 2 numbers are already printed
-    }
-
-    fun printFibonacci(count: Int) {
-        if (count > 0) {
-            n3 = n1 + n2
-            n1 = n2
-            n2 = n3
-            print(" " + n3)
-            printFibonacci(count - 1)
+        for (i in 2..count - 1) {
+            fibonacciArray[i] = fibonacciArray[i - 1] + fibonacciArray[i - 2]
         }
-
-
+        for (i in 0..count - 1) {
+            print(fibonacciArray[i].toString() + " ")
+        }
+        this.view.showList(fibonacciArray.toString())
     }
 
 }

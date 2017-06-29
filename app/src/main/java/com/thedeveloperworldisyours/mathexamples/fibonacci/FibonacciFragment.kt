@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.thedeveloperworldisyours.mathexamples.R.layout.fibonacci_fragment
 import com.thedeveloperworldisyours.mathexamples.commons.inflate
+import kotlinx.android.synthetic.main.fibonacci_fragment.*
 
 /**
  * A simple [Fragment] subclass.
@@ -32,6 +33,8 @@ class FibonacciFragment() : Fragment(), FibonacciContract.View {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
+
+        val number = most_fragment_edit_text.text
 
         return container?.inflate(fibonacci_fragment)
     }
