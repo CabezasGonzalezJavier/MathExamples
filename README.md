@@ -1,5 +1,5 @@
 # MathExamples
-Math Examples in Kotlin, working!!!
+Math Examples in Kotlin, working in project!!!
 
 Also visit my blog: **[The developer world is yours](http://thedeveloperworldisyours.com/)**
 
